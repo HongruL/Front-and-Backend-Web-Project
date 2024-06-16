@@ -1,0 +1,25 @@
+
+Legende:
+ ________________________________________________________________
+|temperatur_drei_mal_taeglich:                                   |
+|----------------------------------------------------------------|
+|                                                                |
+|ID:                 JJJJMMDDHH                                  |
+|STATIONS_ID:        282 (49.8743   10.9206 Bamberg Bayern)      |
+|TT_TER:             Terminwerte der Lufttemperatur in °C        |
+|RF_TER:             Terminwerte der relativen Feuchte in %      |
+|________________________________________________________________|
+
+ ________________________________________________________________
+|niederschlag_monat:                                             |
+|----------------------------------------------------------------|
+|                                                                |
+|ID:                 JJJJMM                                      |
+|STATIONS_ID:        282 (49.8743   10.9206 Bamberg Bayern)      |
+|MESS_DATUM_Beginn:  JJJJMMDD                                    |
+|MESS_DATUM_Ende:    JJJJMMDD                                    |
+|MO_NSH:             Monatssumme der Neuschneehoehe in cm        |
+|MO_RR:              Monatssumme der Niederschlagshoehe in mm    |
+|MO_SH_S:            Monatssumme der Schneehoehe in cm           |
+|MX_RS:              Maximale Niederschlagshoehe des Monats in mm|
+|________________________________________________________________|
