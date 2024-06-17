@@ -27,9 +27,25 @@
   </head>
 
   <body>
-    <h1>Template für Teilleistung 3</h1>
+    <div class="container">
+      <h1 class="mt-4">uni.fest Wetter-App</h1>
+      <p class="lead">Analyse der historischen Wetterdaten für Bamberg, Bayern</p>
 
-    <div id="barchart"></div>
-    <div id="linechart"></div>
+      <div class="card mt-4">
+        <div class="card-body">
+          <h5 class="card-title">Durchschnittliche Niederschlagsmenge pro Monat</h5>
+          <p class="card-text">Das Balkendiagramm zeigt die durchschnittliche Niederschlagsmenge für die Monate Januar bis Dezember.</p>
+          <div id="barchart"></div>
+        </div>
+      </div>
+
+      <div class="card mt-4">
+        <div class="card-body">
+          <h5 class="card-title">Durchschnittliche Temperaturen im Monat mit dem geringsten Regen</h5>
+          <p class="card-text">Das Liniendiagramm zeigt die täglichen Durchschnittstemperaturen für den Monat mit dem geringsten Regen im Sommer (Juni-September).</p>
+          <div id="linechart"></div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
