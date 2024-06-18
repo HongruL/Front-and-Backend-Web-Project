@@ -1,5 +1,5 @@
 // Set the dimensions and margins for the graphs
-const margin = { top: 20, right: 20, bottom: 30, left: 40 },
+const margin = { top: 20, right: 20, bottom: 50, left: 50 },
   width = 650 - margin.left - margin.right,
   height = 500 - margin.top - margin.bottom;
 
@@ -73,6 +73,21 @@ fetch("http://localhost:3000/wetterdaten/niederschlag")
     barchart.append("g")
       .call(d3.axisLeft(y));
 
+    // add x-axis label
+    barchart.append("text")
+      .attr("transform", `translate(${width / 2}, ${height + margin.bottom})`)
+      .style("text-anchor", "middle")
+      .text("Monate");
+
+    // add y-axis label
+    barchart.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 0 - margin.left)
+      .attr("x", 0 - (height / 2))
+      .attr("dy", "1em")
+      .style("text-anchor", "middle")
+      .text("Durchschnittliche Niederschlagsmenge (mm)");
+
     // Identify the summer month with the least rain
     const summerMonths = data.filter(d => ["Juni", "Juli", "August", "September"].includes(d.month));
     const minRainMonth = summerMonths.reduce((min, d) => d.rain < min.rain ? d : min, summerMonths[0]);
@@ -133,10 +148,10 @@ fetch("http://localhost:3000/wetterdaten/niederschlag")
         linechart
           .append("g")
           .attr("transform", `translate(0,${height})`)
-          .call(d3.axisBottom(xLine));
+          .call(d3.axisBottom(xLine).tickValues(d3.range(1, 31)));
 
         // Add the Y Axis
-        linechart.append("g").call(d3.axisLeft(yLine));
+        linechart.append("g").call(d3.axisLeft(yLine).ticks(20));
 
         // Create the line generator
         const line = d3
@@ -152,5 +167,20 @@ fetch("http://localhost:3000/wetterdaten/niederschlag")
           .attr("stroke", "steelblue")
           .attr("stroke-width", 2)
           .attr("d", line);
+
+        // add x-axis label
+        linechart.append("text")
+          .attr("transform", `translate(${width / 2}, ${height + margin.bottom - 10})`)
+          .style("text-anchor", "middle")
+          .text("Tage des Monats");
+
+        // add y-axis label
+        linechart.append("text")
+          .attr("transform", "rotate(-90)")
+          .attr("y", 0 - margin.left)
+          .attr("x", 0 - (height / 2))
+          .attr("dy", "1em")
+          .style("text-anchor", "middle")
+          .text("Durchschnittliche Temperatur (°C)");
       });
   });

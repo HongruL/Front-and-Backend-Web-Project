@@ -6,6 +6,7 @@ import cors from "cors";
 
 const app = express();
 app.server = http.createServer(app);
+// Enable CORS
 app.use(cors());
 
 // Adding a default route at /
